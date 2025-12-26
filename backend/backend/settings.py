@@ -66,10 +66,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "backend.wsgi.application"
 
+# Custom User MOdle 
+AUTH_USER_MODEL = "regi.CustomUser"
 
 # Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -77,6 +77,9 @@ DATABASES = {
     }
 }
 
+AUTHENTICATION_BACKENDS = [
+    "regi.backends.EmailOrUsernameBackend",
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
