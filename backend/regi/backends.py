@@ -12,7 +12,7 @@ class EmailOrUsernameBackend(ModelBackend):
         except CustomUser.DoesNotExist:
             return None
 
-        if user.check_password(password):
+        if customUser.check_password(password):
             return customUser
         return None
     
